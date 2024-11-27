@@ -1,5 +1,5 @@
 import { View } from "react-native";
-import App from "../components/App.js";
+import App from "./App.js";
 
 export default function Page() {
   return (
