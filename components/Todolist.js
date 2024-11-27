@@ -1,7 +1,8 @@
-import { StyleSheet, Text, Pressable, ScrollView, View } from 'react-native'
+import { StyleSheet, Text, Pressable, ScrollView, View, useColorScheme } from 'react-native'
 import React from 'react'
 
 const Todolist = ({ tasks }) => {
+
     return (
         <ScrollView>
 
@@ -29,5 +30,7 @@ const styles = StyleSheet.create({
     },
     taskText: {
         fontSize: 16,
+        color: "#cfcfcf",
+        textAlign: "center"
     },
 });

@@ -1,15 +1,25 @@
 import { View } from 'react-native'
 import React, { useState } from 'react'
 import Todolist from './Todolist'
-import Todoform from './Todoform'
+import TodoForm from './Todoform'
 
 const App = () => {
   const [tasks, setTasks] = useState(['Do laundry', 'Go to gym', 'Walk dog']);
 
+  const addTask = (taskText) => {
+    setTasks([...tasks, taskText])
+  }
+
+
   return (
     <View>
-      <Todolist tasks={tasks}/>
-      <Todoform/>
+      <View style={{
+        justifyContent: "center",
+        alignItems: "center",
+      }}>
+        <Todolist tasks={tasks}/>
+      </View>
+      <TodoForm addTask={addTask}/>
     </View>
   );
 };

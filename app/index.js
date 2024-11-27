@@ -3,8 +3,13 @@ import App from "../components/App.js";
 
 export default function Page() {
   return (
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-          <App/>
-      </View>
+    <View
+      style={{
+        flex: 1,
+        backgroundColor: "#212121"
+      }}
+    >
+      <App/>
+    </View>
   );
 };

@@ -1,19 +1,32 @@
-import { StyleSheet, TextInput, Button, View } from 'react-native'
-import React from 'react'
+"use client"
 
-const Todoform = () => {
+import { StyleSheet, TextInput, Button, View } from 'react-native'
+import React, { useState } from 'react'
+
+const TodoForm = ({ addTask }) => {
+  const [taskText, setTaskText] = useState('');
+  
+  const createTask = () => {
+    if (taskText) {
+      addTask(taskText);
+      setTaskText('');
+    }
+  }
+
   return (
     <View style={styles.form}>
         <TextInput
             style={styles.input}
             placeholder="Add a new task..."
+            onChangeText={(text) => setTaskText(text)}
+            value={taskText}
         />
-        <Button title="Add" />
+        <Button title="Add" onPress={createTask} />
     </View>
   );
 };
 
-export default Todoform;
+export default TodoForm;
 
 const styles = StyleSheet.create({
     form: {
@@ -30,5 +43,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 10,
         paddingVertical: 5,
         marginRight: 10,
+        color: "#cfcfcf",
+        minWidth: "50%"
       },
 });
