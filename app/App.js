@@ -9,7 +9,7 @@ import AboutScreen from "./Screens/AboutScreen";
 
 const App = () => {
     const [tasks, setTasks] = useState(["Do laundry", "Go to gym", "Walk dog"]);
-    // const Stack = createStackNavigator();
+    const Stack = createStackNavigator();
 
     const addTask = taskText => {
         setTasks([...tasks, taskText]);
@@ -19,7 +19,10 @@ const App = () => {
         <NavigationIndependentTree>
             <NavigationContainer>
 
-                
+                <Stack.Navigator>
+                    <Stack.Screen name="Home" component={HomeScreen} />
+                    <Stack.Screen name="About" component={AboutScreen} />
+                </Stack.Navigator>
 
                 {/* todolist code */}
                 <View>

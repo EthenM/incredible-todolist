@@ -5,7 +5,7 @@ import MainLayout from '../layouts/MainLayout'
 const HomeScreen = ({ navigation }) => {
   return (
     <MainLayout>
-      <Button title='Go to About' onPress={navigation.navigate('About')}/>
+      <Button title='Go to About' onPress={() => navigation.navigate('About')}/>
     </MainLayout>
   )
 }
